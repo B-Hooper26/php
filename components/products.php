@@ -11,11 +11,11 @@ foreach ($products as $product):
             class="card-img-top" 
             alt="image of <?= $product['Description'] ?>">
         <div class="card-body">
-            <h5 class="card-title"><?= $product['Name'] ?></h5>
+            <h5 class="card-title"><?= $product['Product_name'] ?></h5>
             <p class="card-text"><?= $product['Description'] ?></p>
             <p class="card-text"><?= $product['Price'] ?></p>
             <p class="card-text"><?= $product['Category'] ?></p>
-            <p class="card-text"><?= $product['Quantity'] ?></p>
+
         </div>
     </div>
 </div>

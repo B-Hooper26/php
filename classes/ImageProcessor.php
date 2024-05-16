@@ -15,7 +15,7 @@ class ImageProcessor {
         }
 
         // Check if the file has a valid extension
-        $ext = strtolower(pathinfo($image['Product_name'], PATHINFO_EXTENSION));
+        $ext = strtolower(pathinfo($image['name'], PATHINFO_EXTENSION));
         if (!in_array($ext, $allowedExtensions)) {
             throw new Exception('The uploaded image has an invalid extension.');
         }

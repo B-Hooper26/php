@@ -7,19 +7,18 @@ if (!empty($id)) {
 
     $product =$controllers->products()->get_product_by_id($id);
 
-    if ($product): ?>
+    if ($product): ?>   
     
-        <div class="card" style="width: 18rem;">
-            <img src="<?= $product['Image'] ?>" class="card-img-top" alt="image of <?= $product['Description'] ?>">
-            <div class="card-body">
-            <h5 class="card-title"><?= $product['Name'] ?></h5>
+    <div class="card" style="width: 18rem;">
+        <img src="<?= $product['Image'] ?>" class="card-img-top" alt="image of <?= $product['Description'] ?>">
+        <div class="card-body">
+            <h5 class="card-title"><?= $product['Product_name'] ?></h5>
             <p class="card-text"><?= $product['Description'] ?></p>
-            <p class="card-text"><?= $product['Price'] ?></p>
-            <p class="card-text"><?= $product['Category'] ?></p>
-            <p class="card-text"><?= $product['Quantity'] ?></p>
+            <p class="card-text">Category: <?= $product['Category'] ?></p>
+            <p class="card-text">Price: <?= $product['Price'] ?></p>
+            <p class="card-text">Quantity: <?= $product['Quantity'] ?></p>
         </div>
-            </div>
-        </div>
+    </div>
 
     <?php 
      else: redirect("not-found"); //404 file not found

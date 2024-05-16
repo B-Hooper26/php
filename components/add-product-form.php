@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $image = InputProcessor::processFile($_FILES['Image'] ?? []);
 
   // Check validity of inputs
-  $valid =  $name['valid'] && $description['valid'] && $price['valid'] && $image['valid'] && $category['valid'] && $quantity['valid']; // Corrected
+  $valid =  $name['valid'] && $description['valid'] && $price['valid']  && $category['valid'] && $quantity['valid'] &&  $image['valid']; // Corrected
 
   if ($valid) {
       // Upload image
@@ -23,19 +23,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
       // Prepare arguments for creating product
       $args = [
-          'Name' => $name['value'],
+          'Product_name' => $name['value'],
           'Description' => $description['value'],
-          'Price' => $price['value'],
-          'Image' =>  $image['value'],
           'Category' => $category['value'],
           'Quantity' => $quantity['value'],
+          'Price' => $price['value'],
+          'Image' =>  $image['value'],
       ];
 
       // Create product
       $id = $controllers->products()->create_product($args);
 
       if (!empty($id) && $id > 0) {
-          redirect('product', ['Product_id' => $id]);
+          redirect('product', ['id' => $id]);
       } else {
           $message = "Error adding product."; //Change
       }
@@ -62,28 +62,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </div>
                 
                 <div class="form-outline mb-4">
-                  <input type="text" id="category" name="Category" class="form-control form-control-lg" placeholder="Category" required value="<?= htmlspecialchars($description['value'] ?? '') ?>"/>
-                  <span class="text-danger"><?= $description['error'] ?? '' ?></span>
-                </div>
-
-                <div class="form-outline mb-4">
                   <input type="text" id="description" name="Description" class="form-control form-control-lg" placeholder="Description" required value="<?= htmlspecialchars($description['value'] ?? '') ?>"/>
                   <span class="text-danger"><?= $price['error'] ?? '' ?></span>
                 </div>
     
+                <div class="form-outline mb-4">
+                  <input type="text" id="category" name="Category" class="form-control form-control-lg" placeholder="Category" required value="<?= htmlspecialchars($category['value'] ?? '') ?>"/>
+                  <span class="text-danger"><?= $description['error'] ?? '' ?></span>
+                </div>
+
                 <div class="form-outline mb-4">
                   <input type="number" id="price" name="Price" class="form-control form-control-lg" placeholder="Price" required value="<?= htmlspecialchars($price['value'] ?? '') ?>"/>
                   <span class="text-danger"><?= $price['error'] ?? '' ?></span>
                 </div>
                     
                 <div class="form-outline mb-4">
-                  <input type="number" id="quantity" name="Quantity" class="form-control form-control-lg" placeholder="Quantity" required value="<?= htmlspecialchars($$quantity['value'] ?? '') ?>"/>
+                  <input type="number" id="quantity" name="Quantity" class="form-control form-control-lg" placeholder="Quantity" required value="<?= htmlspecialchars($quantity['value'] ?? '') ?>"/>
                   <span class="text-danger"><?= $price['error'] ?? '' ?></span>
                 </div>
     
     
                 <div class="form-outline mb-4">
-                  <input type="file" accept="images/*" id="image" name="Image" class="form-control form-control-lg" placeholder="Select Image"required />
+                  <input type="file" accept="Image/*" id="image" name="Image" class="form-control form-control-lg" placeholder="Select Image"required />
                 </div>
     
                 <button class="btn btn-primary btn-lg w-100 mb-4" type="submit">Add Product</button>

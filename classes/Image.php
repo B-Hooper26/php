@@ -4,7 +4,7 @@
         public static function upload($image, $directory = "/uploads") : string
         {
             // Get the file extension of the original filename
-            $ext = pathinfo($image['Product_name'], PATHINFO_EXTENSION);
+            $ext = pathinfo($image['name'], PATHINFO_EXTENSION);
 
             // Generate a unique string to use as the base for the new filename
             $uniqueString = uniqid();
