@@ -53,7 +53,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div class="row d-flex justify-content-center align-items-center h-100">
           <div class="col-12 col-md-8 col-lg-6 col-xl-5">
             <div class="card shadow-2-strong" style="border-radius: 1rem;">
-              <div class="card-body p-5 text-center"> <!-- Allowing user to add products-->
+              <div class="card-body p-5 text-center"> 
+                <!-- Allowing user to add products-->
     
                 <h3 class="mb-2">Add Product</h3>
                 <div class="form-outline mb-4">

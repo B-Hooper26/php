@@ -20,10 +20,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
       $member = $controllers->members()->login_member($email['value'], $password['value']);
 
       if (!$member) {
-        $message = "User details are incorrect.";
+        $message = "User details are incorrect."; //Error checking
      } else {
          $_SESSION['user'] = $member; 
          redirect('member');
+         
       }
 
     }
@@ -44,18 +45,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
   
               <h3 class="mb-2">Sign in</h3>
               <div class="form-outline mb-4">
-                <input type="email" id="email" name="email" class="form-control form-control-lg" placeholder="Email" required value="<?= htmlspecialchars($email['value'] ?? '') ?>"/>
+                <input type="email" id="Email" name="email" class="form-control form-control-lg" placeholder="Email" required value="<?= htmlspecialchars($email['value'] ?? '') ?>"/>
                   <span class="text-danger"><?= $email['error'] ?? '' ?></span>
                 </div>
   
               <div class="form-outline mb-4">
-                <input type="password" id="password" name="password" class="form-control form-control-lg" placeholder="Password" required value="<?= htmlspecialchars($password['value'] ?? '') ?>"/>
+                <input type="password" id="Password" name="password" class="form-control form-control-lg" placeholder="Password" required value="<?= htmlspecialchars($password['value'] ?? '') ?>"/>
                   <span class="text-danger"><?= $password['error'] ?? '' ?></span>
                 </div>
   
               <button class="btn btn-primary btn-lg w-100 mb-4" type="submit">Login</button>
-              <a class="btn btn-secondary btn-lg w-100" type="submit" href="./register.php" >Not got an account?</a>
-              
+              <a class="btn btn-secondary btn-lg w-100" type="submit" href="./register.php" >Not Signed Up?  <!---Allow the user to go to the reigister if they havent signed up->
               <?php if ($message): ?>
                 <div class="alert alert-danger mt-4" role="alert">
                   <?= $message ?? '' ?>
