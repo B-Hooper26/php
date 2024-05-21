@@ -12,7 +12,7 @@
     $email =  InputProcessor::processEmail($_POST['Email']);
     $password =  InputProcessor::processPassword($_POST['Password'], $_POST['password-v']);
     $phonenumber =  InputProcessor::processString($_POST['Phone_number']);
-    $address =  InputProcessor::processPassword($_POST['Address']);
+    $address =  InputProcessor::processString($_POST['Address']);
 
     $valid = $fname['valid'] && $sname['valid'] && $username['valid'] && $email['valid'] && $password['valid'] && $phonenumber['valid'] && $address['valid'];
 
