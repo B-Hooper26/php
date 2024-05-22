@@ -3,7 +3,6 @@
     <div class="container py-5 h-75">
         <p class="card-text">Here are all the products available in our store!</p>
         <a href="register.php" target="_blank">
-            <button class="btn btn-primary register-button">Register Now</button><!-- User can click the button to register-->
         </a>
         <div class="row d-flex justify-content-center align-items-center h-100">
             <?php require __DIR__ . "/components/products.php"; ?>
