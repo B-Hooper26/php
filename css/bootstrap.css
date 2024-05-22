@@ -66,10 +66,10 @@
   --bs-body-line-height: 1.5;
   --bs-body-color: #888;
   --bs-body-bg: #fff;
-  --bs-border-width: 1px;
+  --bs-border-width: 20rem;
   --bs-border-style: solid;
-  --bs-border-color: #eceeef;
-  --bs-border-color-translucent: rgba(0, 0, 0, 0.175);
+  --bs-border-color: #1b6909;
+  --bs-border-color-translucent: rgb(8, 120, 62);
   --bs-border-radius: 0.4rem;
   --bs-border-radius-sm: 0.3rem;
   --bs-border-radius-lg: 0.6rem;
@@ -4198,9 +4198,9 @@ textarea.form-control-lg {
   --bs-card-spacer-y: 1rem;
   --bs-card-spacer-x: 1rem;
   --bs-card-title-spacer-y: 0.5rem;
-  --bs-card-border-width: 1px;
+  --bs-card-border-width: 5px;
   --bs-card-border-color: var(--bs-border-color-translucent);
-  --bs-card-border-radius: 0.4rem;
+  --bs-card-border-radius: 1rem;
   --bs-card-box-shadow: ;
   --bs-card-inner-border-radius: calc(0.4rem - 1px);
   --bs-card-cap-padding-y: 0.5rem;
@@ -4235,11 +4235,14 @@ textarea.form-control-lg {
   border-top-width: 0;
   border-top-left-radius: var(--bs-card-inner-border-radius);
   border-top-right-radius: var(--bs-card-inner-border-radius);
+  font-size: medium;
 }
 .card > .list-group:last-child {
   border-bottom-width: 0;
   border-bottom-right-radius: var(--bs-card-inner-border-radius);
   border-bottom-left-radius: var(--bs-card-inner-border-radius);
+  font-size: medium;
+
 }
 .card > .card-header + .list-group,
 .card > .list-group + .card-footer {
@@ -4249,11 +4252,15 @@ textarea.form-control-lg {
 .card-body {
   flex: 1 1 auto;
   padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
-  color: var(--bs-card-color);
+  color: black
+  
 }
 
 .card-title {
   margin-bottom: var(--bs-card-title-spacer-y);
+  font-size: xx-large;
+  font-weight: bold;
+  color: black;
 }
 
 .card-subtitle {

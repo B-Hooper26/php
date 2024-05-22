@@ -15,10 +15,11 @@ if (!empty($id)) {
             <h5 class="card-title"><?= $product['Product_name'] ?></h5>
             <p class="card-text"><?= $product['Description'] ?></p>
             <p class="card-text">Category: <?= $product['Category'] ?></p>
-            <p class="card-text">Price: <?= $product['Price'] ?></p>
+            <p class="card-text">Price: £<?= $product['Price'] ?></p>
             <p class="card-text">Quantity: <?= $product['Quantity'] ?></p>
         </div>
     </div>
+    
 
     <?php 
      else: redirect("not-found"); //404 file not found

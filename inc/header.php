@@ -32,7 +32,7 @@
         .navbar-custom .nav-link {
           padding: 8px 10px; /* Adjust padding for smaller screens */
         }
-      }
+      } 
     </style>
   </head>
   <body>

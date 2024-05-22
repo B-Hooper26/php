@@ -1,13 +1,12 @@
 <?php require __DIR__ . "/inc/header.php"; ?>
+<h1 style="color: black; text-align: center; padding-top: 15px">Admin Dashboard</h1>
 <section class="vh-100 text-center">
     <div class="container py-5 h-75">
-        <p class="card-text">Here are all the products available in our store!</p>
         <a href="register.php" target="_blank">
         </a>
         <div class="row d-flex justify-content-center align-items-center h-100">
-            <?php require __DIR__ . "/components/products.php"; ?>
+            <?php require __DIR__ . "/components/admin_products.php"; ?>
             <?php require __DIR__ . "/components/add-product-form.php"; ?>
-
         </div>
     </div>
     
