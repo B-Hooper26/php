@@ -1,8 +1,9 @@
-<?php require __DIR__ . "/inc/header.php"; ?>
+<?php require __DIR__ . "/inc/header.php"; ?> <!--When the user logs in -->
 <section class="vh-100 text-center">
     <div class="container py-5 h-75">
         <p class="card-text">Here are all the products available in our store!</p>
-        <a href="register.php" target="_blank">
+        <a href="submit_review.php">
+            <button class="btn btn-primary register-button">Leave us a review! </button><!-- User can click the button to register-->
         </a>
         <div class="row d-flex justify-content-center align-items-center h-100">
             <?php require __DIR__ . "/components/products.php"; ?>
@@ -12,10 +13,10 @@
 <?php require __DIR__ . "/inc/footer.php"; ?>
 <style>
     .register-button {
-        font-size: 1.25rem; /*  font size */
-        padding: 10px 20px; /*  padding */
-        border-radius: 15px; /*  corners */
-        transition: background-color 0.s, transform 0.3s; /*  transitions */
+        font-size: 1.25rem; /* font size */
+        padding: 10px 20px; /* padding */
+        border-radius: 15px; /* corners */
+        transition: background-color 0.s, transform 0.3s; /* transitions */
     }
 
     .register-button:hover {

@@ -5,6 +5,7 @@
       <div class="row d-flex justify-content-center align-items-center h-100">
       <?php require __DIR__ . "/components/products.php"; ?>
       </div>
+      
     </div>
 </section>
 

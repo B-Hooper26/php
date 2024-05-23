@@ -1,10 +1,15 @@
 <?php
+    require_once "DatabaseController.php";
+    require_once "MemberController.php";
+    require_once "ProductController.php";
+    require_once "ReviewController.php"; 
 
     class Controllers {
 
         protected $db = null;
         protected $members = null;
         protected $products = null;
+        protected $reviews = null;
 
         public function __construct()
         {
@@ -45,6 +50,12 @@
                 $this->products = new ProductController($this->db);
             }
             return $this->products;
+        }
+        public function reviews() { // Add this method
+            if ($this->reviews === null) {
+                $this->reviews = new ReviewController($this->db);
+            }
+            return $this->reviews;
         }
     }
 ?>

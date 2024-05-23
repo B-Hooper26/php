@@ -54,7 +54,7 @@
               <a class="nav-link" href="./account_settings.php">Your Account</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./admin_dashboard.php">Reviews</a>
+              <a class="nav-link" href="./submit_review.php">Reviews</a>
             </li>
           </ul>
           <ul class="navbar-nav mb-2 mb-lg-0">

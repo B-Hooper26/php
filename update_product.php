@@ -21,5 +21,5 @@ $productData = [
 
 $controllers->products()->update_product($productData);
 
-redirect("Home"); // Redirect to the product page after updating
+redirect("Admin"); // Redirect to the Admin page after updating
 ?>
