@@ -51,7 +51,7 @@
               <a class="nav-link" href="./index.php">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./account.php">Your Account</a>
+              <a class="nav-link" href="./account_settings.php">Your Account</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="./admin_dashboard.php">Reviews</a>

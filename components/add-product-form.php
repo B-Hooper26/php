@@ -35,8 +35,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       $id = $controllers->products()->create_product($args);
 
       if (!empty($id) && $id > 0) {
-          redirect('product', ['id' => $id]);
-      } else {
+        redirect('Admin');
+      }
+     else {
           $message = "Error adding product."; //Change
       }
   } else {

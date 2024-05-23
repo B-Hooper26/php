@@ -21,5 +21,5 @@ $productData = [
 
 $controllers->products()->update_product($productData);
 
-redirect("product_page.php?id=$id"); // Redirect to the product page after updating
+redirect("Home"); // Redirect to the product page after updating
 ?>

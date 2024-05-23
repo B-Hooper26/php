@@ -65,7 +65,7 @@ if (!empty($id)) {
 <body>
     <div class="container">
         <h1>Edit Product</h1>
-        <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']) ?>" enctype="multipart/form-data">
+        <form action="update_product.php" method="post" enctype="multipart/form-data">
             <input type="hidden" name="id" value="<?= $product['Product_id'] ?>">
             <label for="name">Name:</label>
             <input type="text" id="name" name="Product_name" value="<?= $product['Product_name'] ?>">

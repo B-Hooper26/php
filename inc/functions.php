@@ -1,5 +1,5 @@
 <?php
-    
+    ob_start();
     foreach(glob('./classes/*.php') as $file)
     {
         require_once $file; ///Include all PHP classes
