@@ -24,7 +24,7 @@ $products = $controllers->products()->get_all_products();
                     <h5 class="card-title"><?= htmlspecialchars($product['Product_name'], ENT_QUOTES) ?></h5>
                     <p class="card-text"><?= htmlspecialchars($product['Description'], ENT_QUOTES) ?></p>
                     <p class="card-text">Category: <?= htmlspecialchars($product['Category'], ENT_QUOTES) ?></p>
-                    <p class="card-text">Price: <?= htmlspecialchars($product['Price'], ENT_QUOTES) ?></p>
+                    <p class="card-text">Price: £<?= htmlspecialchars($product['Price'], ENT_QUOTES) ?></p>
                     <p class="card-text">Quantity: <?= htmlspecialchars($product['Quantity'], ENT_QUOTES) ?></p>
                     <a href="edit_product.php?id=<?= htmlspecialchars($product['Product_id'], ENT_QUOTES) ?>" class="btn btn-primary">Edit</a>
                     <a href="delete_product.php?id=<?= htmlspecialchars($product['Product_id'], ENT_QUOTES) ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this product?');">Delete</a>

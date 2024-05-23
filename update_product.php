@@ -1,6 +1,8 @@
 <?php
 require_once './inc/functions.php';
-
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 $id = $_POST['id'];
 $name = $_POST['Product_name'];
 $description = $_POST['Description'];

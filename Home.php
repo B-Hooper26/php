@@ -1,4 +1,7 @@
-<?php require __DIR__ . "/inc/header.php"; ?> <!--When the user logs in -->
+<?php require __DIR__ . "/inc/header.php"; 
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}?> <!--When the user logs in -->
 <section class="vh-100 text-center">
     <div class="container py-5 h-75">
         <p class="card-text">Here are all the products available in our store!</p>

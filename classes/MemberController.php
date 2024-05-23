@@ -65,12 +65,23 @@ class MemberController {
 
     public function login_member(string $email, string $password) {
         $member = $this->get_member_by_email($email);
-
         if ($member) {
             $auth = password_verify($password, $member['Password']);
-            return $auth ? $member : false;
+            if ($auth) {
+                // Check if the user is an admin
+                $isAdmin = isset($member['Is_Admin']) && $member['Is_Admin'] == 1;
+                if ($isAdmin) {
+                    echo "User is an admin!";
+                } else {
+                    echo "User is not an admin!";
+                }
+                return $member;
+            } else {
+                echo "Password verification failed!";
+            }
+        } else {
+            echo "User not found!";
         }
         return false;
     }
 }
-?>

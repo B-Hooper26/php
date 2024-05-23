@@ -1,4 +1,7 @@
 <?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 require_once './inc/functions.php';
 
 $id = $_GET['id'] ?? '';

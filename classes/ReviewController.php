@@ -21,5 +21,12 @@ class ReviewController {
         $stmt = $this->db->query($query);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function deleteReview($reviewId) {
+        $query = "DELETE FROM reviews WHERE Reviews_id = :reviewId";
+        $stmt = $this->db->prepare($query);
+        $stmt->bindParam(":reviewId", $reviewId);
+        return $stmt->execute();
+    }
 }
 ?>

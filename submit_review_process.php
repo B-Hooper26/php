@@ -1,4 +1,7 @@
 <?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 // Include the necessary files and initialize the database connection
 require_once __DIR__ . '/classes/DatabaseController.php'; 
 $db = new DatabaseController("mysql:host=127.0.0.1;dbname=broadleigh_db;charset=utf8", "root", "");

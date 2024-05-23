@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 session_unset();
 
 require_once './inc/functions.php';
@@ -20,10 +22,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (!$member) {
             $message = "User details are incorrect."; // Error checking
         } else {
-            $_SESSION['user'] = $member; 
-            if ($member['Is_Admin']) {
+            $_SESSION['user'] = $member;
+            $_SESSION['Is_Admin'] = $member['Is_Admin'] ? true : false; // Set admin status
+            if ($_SESSION['Is_Admin']) {
                 redirect('Admin'); // Redirect admin to admin page
             } else {
+                $_SESSION['User_id'] = $member['User_id'];
                 redirect('Home'); // Redirect regular user to home page
             }
         }
@@ -32,6 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
+
 
 <form method="post" action="<?= htmlspecialchars($_SERVER['PHP_SELF']) ?>">
     <section class="vh-100">

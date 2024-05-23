@@ -1,4 +1,7 @@
-<?php require __DIR__ . "/inc/header.php"; ?>
+<?php require __DIR__ . "/inc/header.php";
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+} ?>
 <h1 style="color: black; text-align: center; padding-top: 15px">Admin Dashboard</h1>
 <section class="vh-100 text-center">
     <div class="container py-5 h-75">
